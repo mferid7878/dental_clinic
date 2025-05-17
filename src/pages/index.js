@@ -1,115 +1,270 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { MeetDoctorButton } from "@/components/MeetDoctorButton";
+import { CallButton } from "@/components/CallButton";
+import ServiceCard from "@/components/ServiceCard";
 
 export default function Home() {
+  const services = [
+    {
+      title: "General Dentistry",
+      description:
+        "General dentistry is a branch of dentistry that focuses on a wide range of oral health services. General dentists are often the first point of",
+      imageSrc: "./images/jpegs/General_Dentistry.jpeg",
+      imageAlt: "General dentistry procedures and treatments",
+      readMoreLink: "/services/general-dentistry",
+      bookingLink: "/appointments/general-dentistry",
+    },
+    {
+      title: "Skin tag,wart &Tattoo Removal",
+      description:
+        "1.    Skin Tag Removal: This procedure is quick and minimally invasive, typically performed using cryotherapy (freezing), cauterization (burning),",
+      imageSrc: "./images/jpegs/Tattoo_Removal.jpeg",
+      imageAlt: "Skin tag and tattoo removal before and after",
+      readMoreLink: "/services/skin-tag-removal",
+      bookingLink: "/appointments/skin-tag-removal",
+    },
+    {
+      title: "Cosmetic Dentistry",
+      description:
+        "Cosmetic Dentistry focuses on improving the appearance of a person's teeth, gums, and overall smile. While traditional dentistry",
+      imageSrc: "./images/jpegs/Cosmetic_Dentistry.jpeg",
+      imageAlt: "Cosmetic dentistry procedures",
+      readMoreLink: "/services/cosmetic-dentistry",
+      bookingLink: "/appointments/cosmetic-dentistry",
+    },
+  ];
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <>
+      <header>
+        <section className="mainmenu-area sticky z-1 top-0 bg-white shadow-md py-4 px-6">
+          <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+            <div className="flex items-center">
+              <a href="/">
+                <img
+                  src="images/jpegs/family_clinic.jpeg"
+                  alt="Logo"
+                  className="h-16 w-auto"
+                />
+              </a>
+            </div>
+
+            <nav>
+              <ul className="flex gap-6 text-base font-medium">
+                <li>
+                  <a
+                    href="/"
+                    className="text-gray-700 hover:text-gray-900 transition"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/about"
+                    className="text-gray-700 hover:text-gray-900 transition"
+                  >
+                    About
+                  </a>
+                  <ul className="hidden h-[102px] pt-3 mt-0 pb-3 mb-0">
+                    <li>
+                      <a
+                        href="/about"
+                        className="text-gray-700 hover:text-gray-900 transition"
+                      >
+                        Our Story
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/our-doctors"
+                        className="text-gray-700 hover:text-gray-900 transition"
+                      >
+                        Our Doctor
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="/services"
+                    className="text-gray-700 hover:text-gray-900 transition"
+                  >
+                    Services
+                  </a>
+                  <ul className="hidden h-[140px] pt-3 pb-3 mt-0 mb-0">
+                    <li>
+                      <a
+                        href="/services"
+                        className="text-gray-700 hover:text-gray-900 transition"
+                      >
+                        Dentistry
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/services"
+                        className="text-gray-700 hover:text-gray-900 transition"
+                      >
+                        DERMATOLOGY COSMETIC PROCEDURES
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/services"
+                        className="text-gray-700 hover:text-gray-900 transition"
+                      >
+                        Dental,Fillings,Root,Canal,Treatment,Dental,Implants
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="/Updates"
+                    className="text-gray-700 hover:text-gray-900 transition"
+                  >
+                    Updates
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/videos"
+                    className="text-gray-700 hover:text-gray-900 transition"
+                  >
+                    More Info
+                  </a>
+                </li>
+                <ul className="hidden h-16 pt-3 pb-3 mt-0 mb-0">
+                  <li>
+                    <a
+                      href="/videos"
+                      className="text-gray-700 hover:text-gray-900 transition"
+                    >
+                      Videos
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/gallery"
+                      className="text-gray-700 hover:text-gray-900 transition"
+                    >
+                      Gallery
+                    </a>
+                  </li>
+                </ul>
+                <li>
+                  <a
+                    href="/contact"
+                    className="text-gray-700 hover:text-gray-900 transition"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <a
+              href="tel:123-456-7890"
+              className="text-gray-700 hover:text-gray-900 transition"
+            >
+              123-456-7890
+            </a>
+          </div>
+        </section>
+
+        <section className="hero bg-cover bg-center h-screen flex items-center justify-center">
+          <div className="text-left max-w-7xl w-full mx-auto text-white">
+            <p className="text-lg font-semibold mb-2">WELCOME TO</p>
+            <h1 className="text-5xl font-bold mb-4">Family Clinic</h1>
+            <p>
+              Family Multi Speciality Clinic started its medical and dental
+              service since 2006 by Dr kiruthika Asokan, Dental Surgeon.
+            </p>
+
+            <div className="flex gap-4 mt-4">
+              <MeetDoctorButton />
+              <CallButton />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#82c1bb] py-8 ">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl text-white font-bold text-center mb-6">
+              Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  imageSrc={service.imageSrc}
+                  imageAlt={service.imageAlt}
+                  readMoreLink={service.readMoreLink}
+                  bookingLink={service.bookingLink}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-gray-100 text-[#626262]  py-8">
+          <div className="max-w-7xl w-full mx-auto px-4">
+            <h2 className="text-3xl text-[#82c1bb] font-bold text-center mt-[50px] mb-[50px]">
+              Meet Our Doctor
+            </h2>
+            <div className="flex flex-col md:flex-row items-center justify-between bg-white shadow-lg rounded-lg ">
+              <div className="w-full md:w-1/2">
+                <img
+                  src="./images/pngs/image3.png"
+                  alt="Doctor"
+                  className="rounded-lg shadow-lg mb-4 md:mb-0 rounded-br-[50%] rounded-tr-[50%]"
+                />
+              </div>
+              <div className="w-full md:w-1/2 p-[40px] text-center md:text-left">
+                <h3 className="text-[45px] font-[system-ui] font-thin  text-[#82c1bb] mb-2">
+                  Dr. Kiruthika Asokan
+                </h3>
+                <p className="text-xs font-medium mb-2"> Dental Surgeon</p>
+                <p className="flex">
+                  <img src="https://proj.s-cdn.boostkit.dev/59d74e153872831a6483491e/v453/phone.svg?v=454"></img>
+                  <span className="ml-5  text-[#82c1bb] font-semibold ">
+                    123-456-7890
+                  </span>
+                </p>
+                <p className="text-[#898989] pt-20">
+                  Dr. Kiruthika Asokan completed her BDS from the prestigious
+                  SRM Medical University in 2004. Subsequently, she pursued her
+                  certified course in Rotary Root Canal Treatment in 2013. Her
+                  skill and commitment in dentistry create trust and confidence
+                  in every smile she works on. Based in Karambakkam, Porur,
+                  Chennai she has more than 19 years of experience and is
+                  practicing as a full-time Dentist in a Family Clinic.
+                </p>
+                <p className="text-[#898989] mt-10 pb-20">
+                  In 2017, her outstanding skills and strong dedication placed
+                  her on the prestigious "Top 10 Dentists" list recognized by
+                  Business Review Today. She is also valued member of the
+                  respected Indian Dental Association.
+                </p>
+                <div>
+                  <a
+                    href="/appointments"
+                    className="bg-[#82c1bb] text-md text-white font-semibold py-4 px-8   transition duration-300"
+                  >
+                    Read More
+                  </a>
+                  <a
+                    href="/appointments"
+                    className="bg-transparent text-md text-[#82c1bb] ms-4 font-semibold py-4 px-8 border hover:bg-[#82c1bb] transition duration-300"
+                  >
+                    Book an appointment
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </header>
+    </>
   );
 }
