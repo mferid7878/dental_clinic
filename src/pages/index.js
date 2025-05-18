@@ -57,18 +57,19 @@ export default function Home() {
                     Home
                   </a>
                 </li>
-                <li>
+
+                <li className="relative group">
                   <a
                     href="/about"
                     className="text-gray-700 hover:text-gray-900 transition"
                   >
                     About
                   </a>
-                  <ul className="hidden h-[102px] pt-3 mt-0 pb-3 mb-0">
+                  <ul className="absolute hidden group-hover:block  bg-white shadow-lg border-t-2 border-[#82c1bb] mt-[35px] w-48 z-10">
                     <li>
                       <a
                         href="/about"
-                        className="text-gray-700 hover:text-gray-900 transition"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
                       >
                         Our Story
                       </a>
@@ -76,25 +77,26 @@ export default function Home() {
                     <li>
                       <a
                         href="/our-doctors"
-                        className="text-gray-700 hover:text-gray-900 transition"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
                       >
                         Our Doctor
                       </a>
                     </li>
                   </ul>
                 </li>
-                <li>
+
+                <li className="relative group">
                   <a
                     href="/services"
                     className="text-gray-700 hover:text-gray-900 transition"
                   >
                     Services
                   </a>
-                  <ul className="hidden h-[140px] pt-3 pb-3 mt-0 mb-0">
+                  <ul className="absolute hidden group-hover:block bg-white shadow-lg border-t-2  border-[#82c1bb] mt-[35px] w-64 z-10">
                     <li>
                       <a
                         href="/services"
-                        className="text-gray-700 hover:text-gray-900 transition"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
                       >
                         Dentistry
                       </a>
@@ -102,21 +104,22 @@ export default function Home() {
                     <li>
                       <a
                         href="/services"
-                        className="text-gray-700 hover:text-gray-900 transition"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
                       >
-                        DERMATOLOGY COSMETIC PROCEDURES
+                        Dermatology Cosmetic Procedures
                       </a>
                     </li>
                     <li>
                       <a
                         href="/services"
-                        className="text-gray-700 hover:text-gray-900 transition"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
                       >
-                        Dental,Fillings,Root,Canal,Treatment,Dental,Implants
+                        Fillings, Root Canal, Implants
                       </a>
                     </li>
                   </ul>
                 </li>
+
                 <li>
                   <a
                     href="/Updates"
@@ -125,32 +128,34 @@ export default function Home() {
                     Updates
                   </a>
                 </li>
-                <li>
+
+                <li className="relative group">
                   <a
                     href="/videos"
                     className="text-gray-700 hover:text-gray-900 transition"
                   >
                     More Info
                   </a>
+                  <ul className="absolute hidden group-hover:block bg-white shadow-lg border-t-2  border-[#82c1bb] mt-[35px] w-48 z-10">
+                    <li>
+                      <a
+                        href="/videos"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
+                      >
+                        Videos
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/gallery"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
+                      >
+                        Gallery
+                      </a>
+                    </li>
+                  </ul>
                 </li>
-                <ul className="hidden h-16 pt-3 pb-3 mt-0 mb-0">
-                  <li>
-                    <a
-                      href="/videos"
-                      className="text-gray-700 hover:text-gray-900 transition"
-                    >
-                      Videos
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/gallery"
-                      className="text-gray-700 hover:text-gray-900 transition"
-                    >
-                      Gallery
-                    </a>
-                  </li>
-                </ul>
+
                 <li>
                   <a
                     href="/contact"
