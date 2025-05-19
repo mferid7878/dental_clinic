@@ -1,5 +1,5 @@
-// import Image from "next/image";
 import Link from "next/link";
+import { Button } from "../Button";
 
 function ServiceCard(props) {
   const title = props.title || "";
@@ -33,22 +33,20 @@ function ServiceCard(props) {
         </div>
 
         <div className="text-right">
-          <Link
-            href={readMoreLink}
-            className="text-teal-500 border-b border-teal-500 hover:border-white uppercase text-sm font-medium inline-flex items-center transition-colors duration-300"
-          >
-            READ MORE
-          </Link>
+          <Button
+            link={readMoreLink}
+            Name="Read More"
+            style="text-teal-500 border-b border-teal-500 hover:border-white uppercase text-sm font-medium inline-flex items-center transition-colors duration-300"
+          />
         </div>
       </div>
 
       <div className="px-7 pb-7">
-        <Link
-          href={bookingLink}
-          className="block w-full bg-[#82c1bb] text-white text-center py-2 px-4 rounded-sm font-medium transition duration-300 transform shadow-md"
-        >
-          BOOK APPOINTMENT
-        </Link>
+        <Button
+          link={bookingLink}
+          Name="Book Appointment"
+          style="block w-full bg-[#82c1bb] text-white text-center py-2 px-4 rounded-sm font-medium transition duration-300 transform shadow-md"
+        />
       </div>
     </div>
   );
