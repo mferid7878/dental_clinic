@@ -22,7 +22,14 @@ export default function Gallery() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div
+            className="flex justify-center max-w-[1800px] snap-x overflow-x-scroll scrollbar-hide"
+            style={{
+              overflowX: "scroll",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
             <img
               src="images/pngs/doc1.png"
               alt="Gallery Image"
@@ -48,7 +55,6 @@ export default function Gallery() {
               alt="Gallery Image"
               className="w-full md:w-1/2 lg:w-1/3 p-4"
             />
-
             <img
               src="images/pngs/doc6.png"
               alt="Gallery Image"

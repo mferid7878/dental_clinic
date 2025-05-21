@@ -18,9 +18,15 @@ export default function Welcome() {
 
   return (
     <section
-      className="hero bg-cover bg-center h-screen flex items-center justify-center"
+      className="hero  bg-cover bg-center h-screen flex items-center justify-center w-full h-screen"
       style={{
         backgroundImage: `url(${images[current]})`,
+        position: "sticky",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: -1,
       }}
     >
       <div className="text-left max-w-7xl w-full mx-auto text-white">
